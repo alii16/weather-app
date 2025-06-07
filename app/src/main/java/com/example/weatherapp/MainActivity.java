@@ -12,12 +12,12 @@ import android.graphics.Color;
 import android.view.Window;
 
 
-import com.airbnb.lottie.LottieAnimationView; // Import LottieAnimationView
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.weatherapp.api.WeatherApiService;
 import com.example.weatherapp.model.WeatherResponse;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout; // Import TextInputLayout
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.Gson;
 
 import retrofit2.Call;
@@ -28,15 +28,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Deklarasi view
     private TextInputEditText etLocation;
     private MaterialButton btnGetWeather;
-    private TextInputLayout tilLocationInput; // Tambahkan ini untuk mengaktifkan/menonaktifkan input
-    private LottieAnimationView lottieLoadingAnimation; // Ubah deklarasi dari ProgressBar
+    private TextInputLayout tilLocationInput;
+    private LottieAnimationView lottieLoadingAnimation;
 
     // --- PENTING: API KEY LANGSUNG DI SINI ---
-    // INI BUKAN PRAKTIK TERBAIK UNTUK KEAMANAN PRODUKSI.
-    // HANYA UNTUK TUJUAN PENGEMBANGAN SEMENTARA.
-    private static final String API_KEY = "0654a58572534b5597a43526251904"; // <<< GANTI DENGAN API KEY ANDA ASLI DI SINI!
+
+    private static final String API_KEY = "YOUR_API_KEY";
 
     // Base URL untuk WeatherAPI.com
     private static final String BASE_URL = "https://api.weatherapi.com/";
@@ -58,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_main);
 
+         // Inisialisasi
         etLocation = findViewById(R.id.et_location);
-        btnGetWeather = findViewById(R.id.btn_get_weather);
+        btnGetWeather = findViewById(R.id.btn_get_weather);  // Inisialisasi button
         tilLocationInput = findViewById(R.id.til_location_input); // Inisialisasi TextInputLayout
         lottieLoadingAnimation = findViewById(R.id.lottie_loading_animation); // Inisialisasi LottieAnimationView
 
@@ -102,8 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
         WeatherApiService service = retrofit.create(WeatherApiService.class);
 
-        // Jangan tambahkan aqi=yes karena sebelumnya diminta untuk tidak menambahkan
-        // Baris yang benar:
         service.getWeatherForecast(API_KEY, location, 3).enqueue(new Callback<WeatherResponse>() {
             @Override
             public void onResponse(Call<WeatherResponse> call, Response<WeatherResponse> response) {
@@ -124,8 +123,7 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             String rawError = response.errorBody().string();
                             Log.e("WeatherApp", "API Error Raw: " + rawError);
-                            // Coba parse error untuk pesan yang lebih spesifik jika memungkinkan
-                            // Contoh sederhana:
+                        
                             if (rawError.contains("No matching location found")) {
                                 errorMsg = "Location not found. Please try again.";
                             } else {
