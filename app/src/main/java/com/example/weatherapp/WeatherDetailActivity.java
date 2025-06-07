@@ -37,11 +37,11 @@ public class WeatherDetailActivity extends AppCompatActivity {
     private TextView tvCurrentCondition;
     private TextView tvHumidity;
     private TextView tvWindSpeed;
-    private TextView tvFeelsLike; // Deklarasi baru
-    private TextView tvUvIndex;   // Deklarasi baru
-    private TextView tvPressure;  // Deklarasi baru
-    private TextView tvVisibility; // Deklarasi baru
-    private TextView tvPrecipitation; // Deklarasi baru
+    private TextView tvFeelsLike;
+    private TextView tvUvIndex;
+    private TextView tvPressure; 
+    private TextView tvVisibility;
+    private TextView tvPrecipitation;
     private RecyclerView rvForecast;
     private ForecastAdapter forecastAdapter;
     private MaterialButton btnBack;
@@ -68,11 +68,11 @@ public class WeatherDetailActivity extends AppCompatActivity {
         tvCurrentCondition = findViewById(R.id.tv_current_condition);
         tvHumidity = findViewById(R.id.tv_humidity);
         tvWindSpeed = findViewById(R.id.tv_wind_speed);
-        tvFeelsLike = findViewById(R.id.tv_feels_like); // Inisialisasi TextView
-        tvUvIndex = findViewById(R.id.tv_uv_index);     // Inisialisasi TextView
-        tvPressure = findViewById(R.id.tv_pressure);    // Inisialisasi TextView
-        tvVisibility = findViewById(R.id.tv_visibility); // Inisialisasi TextView
-        tvPrecipitation = findViewById(R.id.tv_precipitation); // Inisialisasi TextView
+        tvFeelsLike = findViewById(R.id.tv_feels_like);
+        tvUvIndex = findViewById(R.id.tv_uv_index); 
+        tvPressure = findViewById(R.id.tv_pressure); 
+        tvVisibility = findViewById(R.id.tv_visibility);
+        tvPrecipitation = findViewById(R.id.tv_precipitation);
         rvForecast = findViewById(R.id.rv_forecast);
         btnBack = findViewById(R.id.btn_back);
 
@@ -81,7 +81,7 @@ public class WeatherDetailActivity extends AppCompatActivity {
 
         // Menerima data dari Intent
         String weatherJson = getIntent().getStringExtra("WEATHER_DATA_JSON");
-        String locationName = getIntent().getStringExtra("LOCATION_NAME"); // Anda mungkin tidak lagi membutuhkan ini jika nama lokasi diambil dari weatherJson
+        String locationName = getIntent().getStringExtra("LOCATION_NAME");
 
         if (weatherJson != null) {
             Gson gson = new Gson();
@@ -115,8 +115,8 @@ public class WeatherDetailActivity extends AppCompatActivity {
 
                 Glide.with(this)
                         .load(current.getCondition().getIcon())
-                        .placeholder(R.drawable.baseline_wb_cloudy_24) // Placeholder default
-                        .error(R.drawable.broken) // Error icon
+                        .placeholder(R.drawable.baseline_wb_cloudy_24)
+                        .error(R.drawable.broken)
                         .into(ivCurrentWeatherIcon);
             }
 
