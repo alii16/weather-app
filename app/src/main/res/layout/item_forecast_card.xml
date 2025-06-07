@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="false"
+    app:cardBackgroundColor="@android:color/white"
+    android:foreground="@drawable/card_ripple_effect"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <!-- Accent Line -->
+        <View
+            android:id="@+id/accent_line"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:background="@drawable/forecast_accent_gradient"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Date Container -->
+        <LinearLayout
+            android:id="@+id/date_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@id/accent_line"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/temperature_container">
+
+            <!-- Forecast Date -->
+            <TextView
+                android:id="@+id/tv_forecast_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today, Jun 05"
+                android:textColor="@color/primary_dark"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Forecast Condition -->
+            <TextView
+                android:id="@+id/tv_forecast_condition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cloudy"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"
+                android:alpha="0.8" />
+
+        </LinearLayout>
+
+        <!-- Temperature Container -->
+        <LinearLayout
+            android:id="@+id/temperature_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@id/icon_container"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Temperature Text -->
+            <TextView
+                android:id="@+id/tv_forecast_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20°C / 28°C"
+                android:textColor="@color/primary_dark"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Temperature Range Indicator -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/temperature_range_gradient" />
+
+        </LinearLayout>
+
+        <!-- Weather Icon Container -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/icon_container"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:cardBackgroundColor="@color/icon_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_forecast_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_wb_cloudy_24"
+                android:contentDescription="Forecast Weather Icon"
+                app:tint="@color/primary_light" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Subtle Shadow Effect -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/card_shadow_gradient"
+            android:alpha="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

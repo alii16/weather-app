@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="app_title">Weather App</string>
+    <string name="slogan">Your Reliable Weather Forecast</string>
+    <string name="hint_location_input">Enter City or Coordinate</string>
+    <string name="button_get_weather">🚀 Get Weather</string>
+    <string name="error_load_failed">Failed to load weather data.</string>
+    <string name="error_data_null">Weather data is null.</string>
+    <string name="error_forecast_not_available">Forecast data not available.</string>
+
+    <string name="label_humidity">Humidity: %d%%</string>
+    <string name="label_wind_speed">Wind: %.1f km/h</string>
+    <string name="label_feels_like">Feels Like: %.0f°C</string>
+    <string name="label_uv_index">UV Index: %.0f</string>
+    <string name="label_pressure">Pressure: %.0f mb</string>
+    <string name="label_visibility">Visibility: %.0f km</string>
+    <string name="label_precipitation">Precipitation: %.1f mm</string>
+
+    <string name="today_label">Today</string>
+    <string name="forecast_title">Perkiraan Cuaca 3 Hari Mendatang</string>
+
+
+    <string name="condition_clear">Cerah</string>
+    <string name="condition_partly_cloudy">Sebagian Berawan</string>
+    <string name="condition_cloudy">Berawan</string>
+    <string name="condition_overcast">Mendung Total</string>
+    <string name="condition_mist">Kabut Tipis</string>
+    <string name="condition_patchy_rain_possible">Kemungkinan Hujan Lokal</string>
+    <string name="condition_patchy_snow_possible">Kemungkinan Salju Lokal</string>
+    <string name="condition_patchy_sleet_possible">Kemungkinan Hujan Es Lokal</string>
+    <string name="condition_patchy_freezing_drizzle_possible">Kemungkinan Gerimis Beku Lokal</string>
+    <string name="condition_thundery_outbreaks_possible">Kemungkinan Badai Petir</string>
+    <string name="condition_blowing_snow">Salju Bertiup</string>
+    <string name="condition_blizzard">Badai Salju</string>
+    <string name="condition_fog">Kabut</string>
+    <string name="condition_freezing_fog">Kabut Beku</string>
+    <string name="condition_patchy_light_drizzle">Gerimis Ringan Lokal</string>
+    <string name="condition_light_drizzle">Gerimis Ringan</string>
+    <string name="condition_freezing_drizzle">Gerimis Beku</string>
+    <string name="condition_heavy_freezing_drizzle">Gerimis Beku Lebat</string>
+    <string name="condition_patchy_light_rain">Hujan Ringan Lokal</string>
+    <string name="condition_light_rain">Hujan Ringan</string>
+    <string name="condition_moderate_rain_at_times">Hujan Sedang Sesekali</string>
+    <string name="condition_moderate_rain">Hujan Sedang</string>
+    <string name="condition_heavy_rain_at_times">Hujan Lebat Sesekali</string>
+    <string name="condition_heavy_rain">Hujan Lebat</string>
+    <string name="condition_light_freezing_rain">Hujan Beku Ringan</string>
+    <string name="condition_moderate_or_heavy_freezing_rain">Hujan Beku Sedang atau Lebat</string>
+    <string name="condition_light_sleet">Hujan Es Ringan</string>
+    <string name="condition_moderate_or_heavy_sleet">Hujan Es Sedang atau Lebat</string>
+    <string name="condition_patchy_light_snow">Salju Ringan Lokal</string>
+    <string name="condition_light_snow">Salju Ringan</string>
+    <string name="condition_patchy_moderate_snow">Salju Sedang Lokal</string>
+    <string name="condition_moderate_snow">Salju Sedang</string>
+    <string name="condition_patchy_heavy_snow">Salju Lebat Lokal</string>
+    <string name="condition_heavy_snow">Salju Lebat</string>
+    <string name="condition_ice_pellets">Butiran Es</string>
+    <string name="condition_light_rain_shower">Hujan Ringan</string>
+    <string name="condition_moderate_or_heavy_rain_shower">Hujan Sedang atau Lebat</string>
+    <string name="condition_torrential_rain_shower">Hujan Sangat Lebat</string>
+    <string name="condition_light_sleet_showers">Hujan Es Ringan</string>
+    <string name="condition_moderate_or_heavy_sleet_showers">Hujan Es Sedang atau Lebat</string>
+    <string name="condition_light_snow_showers">Hujan Salju Ringan</string>
+    <string name="condition_moderate_or_heavy_snow_showers">Hujan Salju Sedang atau Lebat</string>
+    <string name="condition_light_showers_of_ice_pellets">Hujan Butiran Es Ringan</string>
+    <string name="condition_moderate_or_heavy_showers_of_ice_pellets">Hujan Butiran Es Sedang atau Lebat</string>
+    <string name="condition_patchy_light_rain_with_thunder">Hujan Ringan Lokal Disertai Petir</string>
+    <string name="condition_moderate_or_heavy_rain_with_thunder">Hujan Sedang atau Lebat Disertai Petir</string>
+    <string name="condition_patchy_light_snow_with_thunder">Salju Ringan Lokal Disertai Petir</string>
+    <string name="condition_moderate_or_heavy_snow_with_thunder">Salju Sedang atau Lebat Disertai Petir</string>
+
+</resources>

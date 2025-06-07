@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:fitsSystemWindows="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".MainActivity">
+
+    <!-- Clean Background Overlay with Subtle Gradient -->
+    <View
+        android:id="@+id/background_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/clean_overlay_gradient"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Weather Icon Decoration -->
+    <ImageView
+        android:id="@+id/iv_weather_decoration"
+        android:layout_width="160dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/cloud_main"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Main Content Container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_main_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="160dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <!-- App Title -->
+            <TextView
+                android:id="@+id/tv_app_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_title"
+                android:textColor="@color/primary_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Slogan -->
+            <TextView
+                android:id="@+id/tv_slogan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/slogan"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_marginBottom="32dp"
+                android:alpha="0.8" />
+
+            <!-- Location Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_location_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:hint="@string/hint_location_input"
+                app:hintTextColor="@color/text_secondary"
+                app:boxStrokeColor="@color/primary_light"
+                app:boxStrokeWidth="2dp"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:startIconDrawable="@drawable/baseline_location_on_24"
+                app:startIconTint="@color/primary_light"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/text_secondary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="16sp"
+                    android:paddingVertical="16dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Get Weather Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_get_weather"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="@string/button_get_weather"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/primary_gradient_start"
+                app:cornerRadius="16dp"
+                app:elevation="6dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@android:color/white"
+                app:rippleColor="@android:color/white" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Loading Animation -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_loading_animation"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/amongus"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_main_content" />
+
+    <!-- Decorative Elements -->
+    <View
+        android:id="@+id/decoration_circle_1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bird_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/decoration_circle_2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/bird_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
