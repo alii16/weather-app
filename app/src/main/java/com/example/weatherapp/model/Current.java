@@ -8,7 +8,7 @@ public class Current {
     @SerializedName("temp_f")
     private double tempF;
     @SerializedName("is_day")
-    private int isDay; // 1 for day, 0 for night
+    private int isDay;
     @SerializedName("condition")
     private Condition condition;
     @SerializedName("wind_kph")
@@ -56,7 +56,7 @@ public class Current {
 
     // NEW GETTERS
     public double getFeelslikeC() {
-        return feelslikeC; // Changed from feelslike_c to feelslikeC to match new field name
+        return feelslikeC; 
     }
 
     public double getUv() {
@@ -64,18 +64,18 @@ public class Current {
     }
 
     public double getPressureMb() {
-        return pressureMb; // Changed from pressure_mb to pressureMb
+        return pressureMb;
     }
 
     public double getVisKm() {
-        return visKm; // Changed from vis_km to visKm
+        return visKm;
     }
 
     public double getPrecipMm() {
-        return precipMm; // Changed from precip_mm to precipMm
+        return precipMm; 
     }
 
-    // Setters (Opsional, tapi direkomendasikan jika Anda perlu mengatur nilai ini secara manual)
+    // Setters 
     public void setTempC(double tempC) {
         this.tempC = tempC;
     }
