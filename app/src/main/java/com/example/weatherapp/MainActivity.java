@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout tilLocationInput;
     private LottieAnimationView lottieLoadingAnimation;
 
-    // --- PENTING: API KEY LANGSUNG DI SINI ---
-
+    // --- API KEY LANGSUNG DI SINI ---
     private static final String API_KEY = "YOUR_API_KEY";
 
     // Base URL untuk WeatherAPI.com
