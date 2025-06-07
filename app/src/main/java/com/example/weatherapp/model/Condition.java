@@ -6,7 +6,7 @@ public class Condition {
     @SerializedName("text")
     private String text;
     @SerializedName("icon")
-    private String icon; // URL to weather icon
+    private String icon;
     @SerializedName("code")
     private int code;
 
@@ -16,7 +16,6 @@ public class Condition {
     }
 
     public String getIcon() {
-        // WeatherAPI icon URLs start with "//". Add "https:" for proper loading.
         if (icon != null && icon.startsWith("//")) {
             return "https:" + icon;
         }
