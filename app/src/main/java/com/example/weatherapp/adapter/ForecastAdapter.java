@@ -24,19 +24,16 @@ import java.util.Locale;
 public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder> {
 
     private List<Forecastday> forecastList;
-    private Context context; // Pastikan field context sudah ada
+    private Context context;
 
-    // Perbarui konstruktor ini agar menerima Context
     public ForecastAdapter(Context context, List<Forecastday> forecastList) {
-        this.context = context; // Inisialisasi context dari parameter
+        this.context = context;
         this.forecastList = forecastList;
     }
 
     @NonNull
     @Override
     public ForecastViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Karena context sudah diinisialisasi di konstruktor,
-        // Anda tidak perlu lagi mengambilnya dari parent di sini.
         View view = LayoutInflater.from(context).inflate(R.layout.item_forecast_card, parent, false);
         return new ForecastViewHolder(view);
     }
@@ -44,7 +41,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
     @Override
     public void onBindViewHolder(@NonNull ForecastViewHolder holder, int position) {
         Forecastday forecastday = forecastList.get(position);
-        Day day = forecastday.getDay(); // Dapatkan objek Day
+        Day day = forecastday.getDay();
 
         // Set Date
         holder.tvDate.setText(formatDate(forecastday.getDate()));
@@ -58,10 +55,10 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.Foreca
             holder.tvCondition.setText(localizedCondition);
 
             // Set Weather Icon
-            Glide.with(context) // Gunakan 'context' yang telah diinisialisasi
+            Glide.with(context)
                     .load(day.getCondition().getIcon())
-                    .placeholder(R.drawable.baseline_wb_cloudy_24) // Placeholder default
-                    .error(R.drawable.broken) // Error icon
+                    .placeholder(R.drawable.baseline_wb_cloudy_24)
+                    .error(R.drawable.broken)
                     .into(holder.ivForecastIcon);
         }
     }
