@@ -25,7 +25,7 @@ public class WeatherResponse {
         return forecast;
     }
 
-    // Setters (Opsional, tapi kadang berguna untuk debugging atau modifikasi)
+    // Setters
     public void setLocation(Location location) {
         this.location = location;
     }
